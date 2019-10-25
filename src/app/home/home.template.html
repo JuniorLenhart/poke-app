@@ -1,0 +1,16 @@
+<div class="card">
+    <div class="card-header d-flex">
+        <div class="col-md-12">
+            <h5> Lista de Pokémon </h5>
+        </div>
+    </div>
+    <div class="card-body table-responsive">
+        <datatable #datatable [parent]="this"></datatable>
+    </div>
+</div>
+
+<ng-template #favoriteColumn let-row="row" let-value="row" let-column="column">
+    <a (click)="toggleFavorite(row)" href="javascript:void(0)">
+        <i [ngClass]="classFavorite(row)"></i>
+    </a>
+</ng-template>
